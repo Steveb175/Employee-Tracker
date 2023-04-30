@@ -1,8 +1,17 @@
 // Packages
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
-const { Department, viewDept } = require("./lib/department");
-const { Employee, viewEmployees } = require("./lib/employee");
+const {
+  Department,
+  viewDept,
+  viewTotalSalariesByDepartment,
+} = require("./lib/department");
+const {
+  Employee,
+  viewEmployees,
+  viewEmployeesByDepartment,
+  viewEmployeesByManager,
+} = require("./lib/employee");
 const { Role, viewRoles } = require("./lib/role");
 const { db } = require("./db/connection.js");
 
@@ -41,11 +50,14 @@ const mainMenu = () => {
         message: "What would you like to do?",
         choices: [
           "View All Employees",
+          "View Employees By Department",
+          "View Employees By Manager",
           "Add Employee",
           "Update Employee Role",
           "View All Roles",
           "Add Role",
           "View All Departments",
+          "View Total Salaries By Department",
           "Add Department",
           "Quit",
         ],
@@ -57,6 +69,46 @@ const mainMenu = () => {
           console.clear();
           // Function to view employees
           viewEmployees();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
+          break;
+        case "View Employees By Department":
+          // Function to view employees by department
+          viewEmployeesByDepartment();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
+          break;
+        case "View Employees By Manager":
+          // Function to view employees by manager
+          viewEmployeesByManager();
           inquirer
             .prompt([
               {
@@ -111,6 +163,27 @@ const mainMenu = () => {
           console.clear();
           // Function to view departments
           viewDept();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
+          break;
+        case "View Total Salaries By Department":
+          console.clear();
+          // Function to view total salaries combined by department
+          viewTotalSalariesByDepartment();
           inquirer
             .prompt([
               {

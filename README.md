@@ -6,7 +6,7 @@
 ## Visuals
 
 ![Example Image](./images/example.PNG)  
-[Video Demonstration](https://drive.google.com/file/d/1fFEdlTpOPgS8g15LU1E_pNTy6qQ5SQyG/view)
+[Video Demonstration](https://drive.google.com/file/d/1aAr68U0rECvdlYNYVG7f3QP9y-fPO7Ly/view)
 
 ## Description
   This application is a simple database that a company can use to track and update information regarding employees, departments, and roles.
