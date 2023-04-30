@@ -28,7 +28,7 @@ const mainMenu = () => {
   console.log(
     "━━━━━━━━━┗┛━━━━━━━━━┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   );
-  console.log(".::MAIN MENU::.");
+  console.log("MAIN MENU");
   return inquirer
     .prompt([
       {
