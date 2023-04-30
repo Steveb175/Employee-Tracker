@@ -28,7 +28,7 @@ VALUES
 ('R2', 'D2', 4, NULL),
 ('Obi-Wan', 'Kenobi', 5, NULL),
 ('Anakin', 'Skywalker', 1, 5),
-('Padmé', 'Amidala', 2, 5),
+('Padme', 'Amidala', 2, 5),
 ('Lando', 'Calrissian', 3, NULL),
 ('Wedge', 'Antilles', 4, 3),
 ('Boba', 'Fett', 5, NULL),

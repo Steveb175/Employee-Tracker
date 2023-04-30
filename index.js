@@ -57,6 +57,22 @@ const mainMenu = () => {
           console.clear();
           // Function to view employees
           viewEmployees();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
           break;
         case "Add Employee":
           console.clear();
@@ -70,6 +86,22 @@ const mainMenu = () => {
           console.clear();
           // Function to view roles
           viewRoles();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
           break;
         case "Add Role":
           console.clear();
@@ -79,6 +111,22 @@ const mainMenu = () => {
           console.clear();
           // Function to view departments
           viewDept();
+          inquirer
+            .prompt([
+              {
+                type: "list",
+                name: "choice",
+                message: "What would you like to do?",
+                choices: ["Return to Main Menu", "Quit"],
+              },
+            ])
+            .then((answers) => {
+              if (answers.choice === "Return to Main Menu") {
+                mainMenu();
+              } else {
+                process.exit();
+              }
+            });
           break;
         case "Add Department":
           console.clear();
@@ -87,10 +135,12 @@ const mainMenu = () => {
         case "Quit":
           console.clear();
           // Function to quit
-          quit();
+          process.exit();
           break;
       }
     });
 };
 
 mainMenu();
+
+module.exports = { mainMenu };
