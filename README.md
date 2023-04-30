@@ -5,7 +5,7 @@
 
 ## Visuals
 
-![Example Image](./images/example.png)  
+![Example Image](./images/example.PNG)  
 [Video Demonstration](https://drive.google.com/file/d/1fFEdlTpOPgS8g15LU1E_pNTy6qQ5SQyG/view)
 
 ## Description
