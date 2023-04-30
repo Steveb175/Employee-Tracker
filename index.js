@@ -1,6 +1,10 @@
 // Packages
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
+const { Department, viewDept } = require("./lib/department");
+const { Employee, viewEmployees } = require("./lib/employee");
+const { Role, viewRoles } = require("./lib/role");
+const { db } = require("./db/connection.js");
 
 const mainMenu = () => {
   console.clear();
@@ -48,10 +52,11 @@ const mainMenu = () => {
       },
     ])
     .then((mainMenuSelect) => {
-      switch (mainMenuSelect) {
+      switch (mainMenuSelect.action) {
         case "View All Employees":
           console.clear();
           // Function to view employees
+          viewEmployees();
           break;
         case "Add Employee":
           console.clear();
@@ -64,6 +69,7 @@ const mainMenu = () => {
         case "View All Roles":
           console.clear();
           // Function to view roles
+          viewRoles();
           break;
         case "Add Role":
           console.clear();
@@ -72,6 +78,7 @@ const mainMenu = () => {
         case "View All Departments":
           console.clear();
           // Function to view departments
+          viewDept();
           break;
         case "Add Department":
           console.clear();
@@ -80,7 +87,10 @@ const mainMenu = () => {
         case "Quit":
           console.clear();
           // Function to quit
+          quit();
           break;
       }
     });
 };
+
+mainMenu();
